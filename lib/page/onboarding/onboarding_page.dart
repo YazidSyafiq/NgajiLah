@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/onboarding/screen_1.dart';
-import 'package:ngajilah/page/onboarding/screen_2.dart';
-import 'package:ngajilah/page/onboarding/screen_3.dart';
-import 'package:ngajilah/page/onboarding/screen_4.dart';
+import 'package:ngajilah/page/onboarding/onboarding_screen_1.dart';
+import 'package:ngajilah/page/onboarding/onboarding_screen_2.dart';
+import 'package:ngajilah/page/onboarding/onboarding_screen_3.dart';
+import 'package:ngajilah/page/onboarding/onboarding_screen_4.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -54,7 +54,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ],
             ),
             Positioned(
-              top: 30,
+              top: 45,
               right: 16,
               child: currentPage != 3
                   ? TextButton(
