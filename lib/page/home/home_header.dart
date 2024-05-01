@@ -22,7 +22,7 @@ class HomeHeader extends StatelessWidget {
         Text(
           'Selamat Datang di NgajiLah App \nMari bersama-sama perkuat keimanan kita',
           style: TextStyleCollection.poppinsNormal.copyWith(
-            color: ColorCollection.mellowApricot,
+            color: ColorCollection.rajah,
           ),
           textAlign: TextAlign.center,
         ),

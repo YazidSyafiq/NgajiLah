@@ -13,4 +13,8 @@ class TextStyleCollection {
     fontWeight: FontWeight.normal,
     color: ColorCollection.darkGreen,
   );
+  static TextStyle poppinsBoldMenu = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
 }

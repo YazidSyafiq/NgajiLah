@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     HomeJadwalSholat(),
                     SizedBox(
-                      height: 24,
+                      height: 32,
                     ),
                   ],
                 ),

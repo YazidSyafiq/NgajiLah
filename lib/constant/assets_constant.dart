@@ -12,7 +12,10 @@ class Assets {
   static String sholatImage = 'assets/images/male_sholat.png';
   static String dzikirImage = 'assets/images/dzikir.png';
   static String pattern1 = 'assets/images/pattern_1.png';
+  static String pattern2 = 'assets/images/pattern_2.png';
   static String frame = 'assets/images/frame.png';
+  static String quranLetter = 'assets/images/quran_letter.png';
+  static String frameNomor = 'assets/images/frame_nomor.png';
 }
 
 class IconMenu {

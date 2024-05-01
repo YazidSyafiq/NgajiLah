@@ -18,4 +18,11 @@ class ColorCollection {
   static Color rajah = const Color(0xFFFDA766);
   static Color mellowApricot = const Color(0xFFFDB777);
   static Color transparent = Colors.transparent;
+  static Color fluorescentOrange = const Color(0xFFFFBF00);
+  static Color blueGreen = const Color(0xFF054C35);
+  static Color castletonGreen = const Color(0xFF045A40);
+  static Color bangladeshGreen = const Color(0xFF036648);
+  static Color bangladeshGreen1 = const Color(0xFF027351);
+  static Color spanishViridian = const Color(0xFF027F5A);
+  static Color genericViridian = const Color(0xFF038B62);
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
-import 'package:ngajilah/constant/text_style_constant.dart';
+import 'package:ngajilah/page/home/home_menu_container.dart';
 
 class HomeMenu extends StatefulWidget {
   const HomeMenu({super.key});
@@ -57,170 +57,25 @@ class _HomeMenuState extends State<HomeMenu> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
+              HomeMenuContainer(
                 onTap: () {},
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: ColorCollection.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ColorCollection.semiDarkGrey,
-                        offset: const Offset(0, 3),
-                        blurRadius: 3,
-                        blurStyle: BlurStyle.normal,
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          IconMenu.quranIconMenu,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Al-Quran',
-                          style: TextStyleCollection.poppinsBold.copyWith(
-                            fontSize: 12,
-                            color: ColorCollection.darkGreen1,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                iconAsset: IconMenu.quranIconMenu,
+                label: 'Al-Quran',
               ),
-              GestureDetector(
+              HomeMenuContainer(
                 onTap: () {},
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: ColorCollection.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ColorCollection.semiDarkGrey,
-                        offset: const Offset(0, 3),
-                        blurRadius: 3,
-                        blurStyle: BlurStyle.normal,
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          IconMenu.doaIconMenu,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Doa',
-                          style: TextStyleCollection.poppinsBold.copyWith(
-                            fontSize: 12,
-                            color: ColorCollection.darkGreen1,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                iconAsset: IconMenu.doaIconMenu,
+                label: 'Doa',
               ),
-              GestureDetector(
+              HomeMenuContainer(
                 onTap: () {},
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: ColorCollection.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ColorCollection.semiDarkGrey,
-                        offset: const Offset(0, 3),
-                        blurRadius: 3,
-                        blurStyle: BlurStyle.normal,
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          IconMenu.tasbihIconMenu,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Tasbih',
-                          style: TextStyleCollection.poppinsBold.copyWith(
-                            fontSize: 12,
-                            color: ColorCollection.darkGreen1,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                iconAsset: IconMenu.tasbihIconMenu,
+                label: 'Tasbih',
               ),
-              GestureDetector(
+              HomeMenuContainer(
                 onTap: () {},
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: ColorCollection.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ColorCollection.semiDarkGrey,
-                        offset: const Offset(0, 3),
-                        blurRadius: 3,
-                        blurStyle: BlurStyle.normal,
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          IconMenu.asbabunIconMenu,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Asbabun',
-                          style: TextStyleCollection.poppinsBold.copyWith(
-                            fontSize: 12,
-                            color: ColorCollection.darkGreen1,
-                          ),
-                          textAlign: TextAlign.center,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                iconAsset: IconMenu.asbabunIconMenu,
+                label: 'Asbabun',
               ),
             ],
           ),
