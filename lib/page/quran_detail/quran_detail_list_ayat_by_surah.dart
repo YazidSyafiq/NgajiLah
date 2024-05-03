@@ -3,11 +3,10 @@ import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/quran/quran_provider.dart';
-import 'package:ngajilah/utils/nama_surah_by_ayat.dart';
 import 'package:provider/provider.dart';
 
-class ListAyatByJuz extends StatelessWidget {
-  const ListAyatByJuz({super.key});
+class ListAyatBySurah extends StatelessWidget {
+  const ListAyatBySurah({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +24,13 @@ class ListAyatByJuz extends StatelessWidget {
           ),
           child: ListView.builder(
             shrinkWrap: true,
-            itemCount: provider.detailJuzResponse.data?.verses?.length,
+            itemCount: provider.detailSurahResponse.data?.ayat?.length,
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
+                padding: const EdgeInsets.only(
+                  right: 16,
+                  left: 16,
+                  bottom: 12,
                 ),
                 child: Column(
                   children: [
@@ -84,7 +84,7 @@ class ListAyatByJuz extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                '${provider.detailJuzResponse.data?.verses?[index].number?.inSurah}',
+                                '${provider.detailSurahResponse.data?.ayat?[index].nomorAyat}',
                                 style: TextStyleCollection.poppinsBold.copyWith(
                                   color: ColorCollection.white,
                                   fontSize: 14,
@@ -93,11 +93,7 @@ class ListAyatByJuz extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            getNamaSurah(
-                              provider.detailJuzResponse.data?.verses?[index]
-                                      .number?.inQuran ??
-                                  0,
-                            ),
+                            provider.detailSurahResponse.data?.namaLatin ?? '-',
                             style: TextStyleCollection.poppinsBold.copyWith(
                               fontSize: 16,
                               color: ColorCollection.darkGreen1,
@@ -127,9 +123,7 @@ class ListAyatByJuz extends StatelessWidget {
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(
-                              provider.detailJuzResponse.data?.verses?[index]
-                                      .text?.arab ??
-                                  '-',
+                              '${provider.detailSurahResponse.data?.ayat?[index].teksArab}',
                               style: TextStyleCollection.lateefArabic,
                               textAlign: TextAlign.right,
                             ),
@@ -148,17 +142,17 @@ class ListAyatByJuz extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            provider.detailJuzResponse.data?.verses?[index]
-                                    .translation?.id ??
+                            provider.detailSurahResponse.data?.ayat?[index]
+                                    .teksIndonesia ??
                                 '-',
                             style: TextStyleCollection.poppinsNormal.copyWith(
                               fontSize: 14,
                               color: ColorCollection.darkGreen1,
                             ),
-                            textAlign: TextAlign.justify,
+                            textAlign: TextAlign.left,
                           ),
                           const SizedBox(
-                            height: 12,
+                            height: 24,
                           ),
                         ],
                       ),

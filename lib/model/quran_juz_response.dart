@@ -13,7 +13,7 @@ String juzQuranResponseToJson(JuzQuranResponse data) =>
 class JuzQuranResponse {
   bool? status;
   Request? request;
-  List<Datum>? data;
+  List<DataJuz>? data;
 
   JuzQuranResponse({
     this.status,
@@ -28,7 +28,7 @@ class JuzQuranResponse {
             json["request"] == null ? null : Request.fromJson(json["request"]),
         data: json["data"] == null
             ? []
-            : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+            : List<DataJuz>.from(json["data"]!.map((x) => DataJuz.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -40,7 +40,7 @@ class JuzQuranResponse {
       };
 }
 
-class Datum {
+class DataJuz {
   String? ayatArab;
   String? ayatIndo;
   String? ayatLatin;
@@ -55,7 +55,7 @@ class Datum {
   String? verseEnd;
   String? verseStart;
 
-  Datum({
+  DataJuz({
     this.ayatArab,
     this.ayatIndo,
     this.ayatLatin,
@@ -71,7 +71,7 @@ class Datum {
     this.verseStart,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory DataJuz.fromJson(Map<String, dynamic> json) => DataJuz(
         ayatArab: json["ayat_arab"],
         ayatIndo: json["ayat_indo"],
         ayatLatin: json["ayat_latin"],

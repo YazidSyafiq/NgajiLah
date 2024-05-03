@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ngajilah/page/doa/doa_page.dart';
+import 'package:ngajilah/page/doa/doa_provider.dart';
 import 'package:ngajilah/page/home/home_jadwal_sholat_provider.dart';
-import 'package:ngajilah/page/quran/quran_page.dart';
 import 'package:ngajilah/page/quran/quran_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<QuranProvider>(
           create: (context) => QuranProvider(),
         ),
+        ChangeNotifierProvider<DoaProvider>(
+          create: (context) => DoaProvider(),
+        ),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
           Locale('en'),
           Locale('id'),
         ],
-        home: QuranPage(),
+        home: KumpulanDoaPage(),
       ),
     );
   }

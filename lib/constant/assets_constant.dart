@@ -7,8 +7,11 @@ class Assets {
   static String maleFemaleQuranImage = 'assets/images/male_female_quran.png';
   static String familyReadQuranImage = 'assets/images/family_quran.png';
   static String assalamualaikumLetter = 'assets/images/assalamualaikum.png';
+  static String kumpulanDoaLetter = 'assets/images/kumpulan_doa_letter.png';
+  static String doaLetter = 'assets/images/doa_letter.png';
   static String readQuranImage = 'assets/images/read_quran.png';
   static String doaImage = 'assets/images/male_doa.png';
+  static String doaImage2 = 'assets/images/doa_female.png';
   static String sholatImage = 'assets/images/male_sholat.png';
   static String dzikirImage = 'assets/images/dzikir.png';
   static String pattern1 = 'assets/images/pattern_1.png';
