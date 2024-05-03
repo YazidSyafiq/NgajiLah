@@ -8,13 +8,20 @@ class TextStyleCollection {
     fontWeight: FontWeight.bold,
     color: ColorCollection.darkGreen,
   );
+
   static TextStyle poppinsNormal = GoogleFonts.poppins(
     fontSize: 14,
     fontWeight: FontWeight.normal,
     color: ColorCollection.darkGreen,
   );
+
   static TextStyle poppinsBoldMenu = GoogleFonts.poppins(
     fontSize: 18,
     fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle lateefArabic = GoogleFonts.lateef(
+    fontSize: 36,
+    color: ColorCollection.darkGreen1,
   );
 }

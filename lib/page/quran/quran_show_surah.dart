@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
+import 'package:ngajilah/page/quran/quran_detail_surah.dart';
 import 'package:ngajilah/page/quran/quran_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -107,13 +108,22 @@ class _ShowSurahState extends State<ShowSurah> {
           );
         } else {
           return ListView.builder(
-            itemCount: provider.surahQuranResponse.data?.length ?? 0,
+            itemCount: provider.surahQuranResponse.data?.length,
             itemBuilder: (context, index) {
               var data = provider.surahQuranResponse.data?[index];
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailSurahPage(
+                          nomorSurah: data?.nomor.toString() ?? '0',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     height: 100,
                     width: double.infinity,
@@ -157,7 +167,7 @@ class _ShowSurahState extends State<ShowSurah> {
                             ),
                             child: Center(
                               child: Text(
-                                data?.number ?? '-',
+                                data?.nomor.toString() ?? '0',
                                 style: TextStyleCollection.poppinsBold.copyWith(
                                   fontSize: 14,
                                   color: ColorCollection.white,
@@ -172,7 +182,7 @@ class _ShowSurahState extends State<ShowSurah> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                data?.nameId ?? '-',
+                                data?.namaLatin ?? '-',
                                 style: TextStyleCollection.poppinsBold.copyWith(
                                   color: ColorCollection.white,
                                   fontSize: 16,
@@ -186,7 +196,7 @@ class _ShowSurahState extends State<ShowSurah> {
                               Row(
                                 children: [
                                   Text(
-                                    data?.revelationId ?? '-',
+                                    data?.tempatTurun ?? '-',
                                     style: TextStyleCollection.poppinsNormal
                                         .copyWith(
                                       color: ColorCollection.white,
@@ -209,7 +219,7 @@ class _ShowSurahState extends State<ShowSurah> {
                                     width: 5,
                                   ),
                                   Text(
-                                    '${data?.numberOfVerses} Ayat',
+                                    '${data?.jumlahAyat} Ayat',
                                     style: TextStyleCollection.poppinsNormal
                                         .copyWith(
                                       color: ColorCollection.white,
@@ -223,7 +233,7 @@ class _ShowSurahState extends State<ShowSurah> {
                           ),
                         ),
                         Text(
-                          data?.nameShort ?? '-',
+                          data?.nama ?? '-',
                           style: TextStyle(
                             color: ColorCollection.white,
                             fontSize: 20,

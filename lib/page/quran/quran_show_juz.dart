@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
+import 'package:ngajilah/page/quran/quran_detail_juz.dart';
 import 'package:ngajilah/page/quran/quran_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -110,7 +111,16 @@ class _ShowSurahState extends State<ShowJuz> {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailJuzPage(
+                          nomorJuz: data?.number ?? '0',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     height: 100,
                     width: double.infinity,

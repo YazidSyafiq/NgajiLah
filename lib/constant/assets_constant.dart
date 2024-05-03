@@ -16,6 +16,9 @@ class Assets {
   static String frame = 'assets/images/frame.png';
   static String quranLetter = 'assets/images/quran_letter.png';
   static String frameNomor = 'assets/images/frame_nomor.png';
+  static String frameNomor1 = 'assets/images/frame_nomor_1.png';
+  static String frameNomor2 = 'assets/images/frame_nomor_2.png';
+  static String bismillahLetter = 'assets/images/bismillah_letter.svg';
 }
 
 class IconMenu {
