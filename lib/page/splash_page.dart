@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
+import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/page/home/home_page.dart';
 import 'package:ngajilah/page/onboarding/onboarding_page.dart';
 import 'package:ngajilah/utils/shared_pref_utils.dart';
@@ -47,6 +49,12 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: ColorCollection.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

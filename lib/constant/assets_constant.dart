@@ -18,10 +18,13 @@ class Assets {
   static String pattern2 = 'assets/images/pattern_2.png';
   static String frame = 'assets/images/frame.png';
   static String quranLetter = 'assets/images/quran_letter.png';
+  static String tasbihLetter = 'assets/images/tasbih_letter.png';
   static String frameNomor = 'assets/images/frame_nomor.png';
   static String frameNomor1 = 'assets/images/frame_nomor_1.png';
   static String frameNomor2 = 'assets/images/frame_nomor_2.png';
   static String bismillahLetter = 'assets/images/bismillah_letter.svg';
+  static String tasbihImagePage = 'assets/images/tasbih.png';
+  static String tasbihImageContainer = 'assets/images/tasbih_image.png';
 }
 
 class IconMenu {
