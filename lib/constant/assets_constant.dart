@@ -25,6 +25,8 @@ class Assets {
   static String bismillahLetter = 'assets/images/bismillah_letter.svg';
   static String tasbihImagePage = 'assets/images/tasbih.png';
   static String tasbihImageContainer = 'assets/images/tasbih_image.png';
+  static String asbabunLetter = 'assets/images/asbabun_letter.png';
+  static String asbabunImage = 'assets/images/asbabun_image.png';
 }
 
 class IconMenu {
@@ -37,4 +39,11 @@ class IconMenu {
   static String sholatAshar = 'assets/images/sholat_ashar.svg';
   static String sholatMaghrib = 'assets/images/sholat_maghrib.svg';
   static String sholatIsya = 'assets/images/sholat_isya.svg';
+}
+
+class IconBottomNavBar {
+  static String tasbih = 'assets/images/icon_tasbih.svg';
+  static String doa = 'assets/images/icon_doa.svg';
+  static String home = 'assets/images/icon_home.svg';
+  static String quran = 'assets/images/icon_quran.svg';
 }

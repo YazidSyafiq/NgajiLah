@@ -19,21 +19,34 @@ class _ListDoaState extends State<ListDoa> {
     return Consumer<DoaProvider>(
       builder: (context, provider, child) {
         if (provider.isLoadingListDoa) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 24,
-              ),
-              SizedBox(
-                width: 30,
-                height: 30,
-                child: CircularProgressIndicator(
-                  color: ColorCollection.vividOrange,
+          return Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.backgroundSplash,
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
-            ],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  SizedBox(
+                    width: 30,
+                    height: 30,
+                    child: CircularProgressIndicator(
+                      color: ColorCollection.vividOrange,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           );
         } else if (provider.errorListDoa != null) {
           return Center(

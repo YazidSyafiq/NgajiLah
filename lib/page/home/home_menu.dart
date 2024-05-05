@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
+import 'package:ngajilah/page/asbabun/asbabun_page.dart';
+import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:ngajilah/page/home/home_menu_container.dart';
 
 class HomeMenu extends StatefulWidget {
@@ -58,22 +59,59 @@ class _HomeMenuState extends State<HomeMenu> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               HomeMenuContainer(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavBar(
+                        initialIndex: 1,
+                      ),
+                    ),
+                    (route) => false,
+                  );
+                },
                 iconAsset: IconMenu.quranIconMenu,
                 label: 'Al-Quran',
               ),
               HomeMenuContainer(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavBar(
+                        initialIndex: 2,
+                      ),
+                    ),
+                    (route) => false,
+                  );
+                },
                 iconAsset: IconMenu.doaIconMenu,
                 label: 'Doa',
               ),
               HomeMenuContainer(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavBar(
+                        initialIndex: 3,
+                      ),
+                    ),
+                    (route) => false,
+                  );
+                },
                 iconAsset: IconMenu.tasbihIconMenu,
                 label: 'Tasbih',
               ),
               HomeMenuContainer(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AsbabunPage(),
+                    ),
+                  );
+                },
                 iconAsset: IconMenu.asbabunIconMenu,
                 label: 'Asbabun',
               ),

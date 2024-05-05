@@ -25,4 +25,6 @@ class ColorCollection {
   static Color bangladeshGreen1 = const Color(0xFF027351);
   static Color spanishViridian = const Color(0xFF027F5A);
   static Color genericViridian = const Color(0xFF038B62);
+  static Color bostonUniversityRed = const Color(0xFFC40000);
+  static Color cobaltBlue = const Color(0xFF0044A6);
 }

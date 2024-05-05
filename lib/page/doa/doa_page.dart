@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/color_constant.dart';
+import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_bar.dart';
+import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
 import 'package:ngajilah/page/doa/doa_header.dart';
 import 'package:ngajilah/page/doa/doa_list.dart';
 import 'package:ngajilah/page/doa/doa_provider.dart';
@@ -34,12 +36,30 @@ class _KumpulanDoaPageState extends State<KumpulanDoaPage> {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return const Scaffold(
-      body: Column(
-        children: [
-          DoaHeader(),
-          ListDoa(),
-        ],
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        int selectedIndex =
+            Provider.of<BottomNavbarProvider>(context, listen: false)
+                .selectedIndex;
+        if (selectedIndex == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BottomNavBar(
+                initialIndex: 0,
+              ),
+            ),
+          );
+        }
+      },
+      child: const Scaffold(
+        body: Column(
+          children: [
+            DoaHeader(),
+            ListDoa(),
+          ],
+        ),
       ),
     );
   }
