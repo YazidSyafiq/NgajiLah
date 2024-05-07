@@ -22,8 +22,6 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
           Provider.of<JadwalSholatProvider>(context, listen: false)
               .getSavedAddress();
           Provider.of<JadwalSholatProvider>(context, listen: false)
-              .getCurrentDate();
-          Provider.of<JadwalSholatProvider>(context, listen: false)
               .getAddress();
         }
       },
@@ -72,8 +70,6 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
               onPressed: () {
                 Provider.of<JadwalSholatProvider>(context, listen: false)
                     .getAddress();
-                Provider.of<JadwalSholatProvider>(context, listen: false)
-                    .getJadwalSholat();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: ColorCollection.transparent,
@@ -126,12 +122,34 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
               fontSize: 16,
             ),
           ),
-          Text(
-            '(${Provider.of<JadwalSholatProvider>(context, listen: false).getCurrentDate()})',
-            style: TextStyleCollection.poppinsNormal.copyWith(
-              color: ColorCollection.white,
-              fontSize: 13,
-            ),
+          Consumer<JadwalSholatProvider>(
+            builder: (context, provider, child) {
+              if (provider.isLoadingToday || provider.isLoading) {
+                return SizedBox(
+                  width: 15,
+                  height: 15,
+                  child: CircularProgressIndicator(
+                    color: ColorCollection.mellowApricot,
+                  ),
+                );
+              } else if (provider.errorToday != null) {
+                return IconButton(
+                  onPressed: () {
+                    provider.getCurrentDate();
+                  },
+                  icon: const Icon(Icons.refresh),
+                  color: ColorCollection.white,
+                );
+              } else {
+                return Text(
+                  provider.today ?? '-',
+                  style: TextStyleCollection.poppinsNormal.copyWith(
+                    color: ColorCollection.white,
+                    fontSize: 13,
+                  ),
+                );
+              }
+            },
           ),
           const SizedBox(
             height: 16,
@@ -140,7 +158,6 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Consumer<JadwalSholatProvider>(
               builder: (context, provider, child) {
-                var jadwalSholatResult = provider.jadwalSholat.data?.timings;
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,35 +167,35 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
                       label: 'Subuh',
                       isLoading: provider.isLoading,
                       isLoadingSholat: provider.isLoadingSholat,
-                      waktuSholat: jadwalSholatResult?.fajr,
+                      waktuSholat: provider.subuh,
                     ),
                     ContainerWaktuSholat(
                       assetsIcon: IconMenu.sholatDzuhur,
                       label: 'Dzuhur',
                       isLoading: provider.isLoading,
                       isLoadingSholat: provider.isLoadingSholat,
-                      waktuSholat: jadwalSholatResult?.dhuhr,
+                      waktuSholat: provider.dzuhur,
                     ),
                     ContainerWaktuSholat(
                       assetsIcon: IconMenu.sholatAshar,
                       label: 'Ashar',
                       isLoading: provider.isLoading,
                       isLoadingSholat: provider.isLoadingSholat,
-                      waktuSholat: jadwalSholatResult?.asr,
+                      waktuSholat: provider.ashar,
                     ),
                     ContainerWaktuSholat(
                       assetsIcon: IconMenu.sholatMaghrib,
                       label: 'Maghrib',
                       isLoading: provider.isLoading,
                       isLoadingSholat: provider.isLoadingSholat,
-                      waktuSholat: jadwalSholatResult?.maghrib,
+                      waktuSholat: provider.maghrib,
                     ),
                     ContainerWaktuSholat(
                       assetsIcon: IconMenu.sholatIsya,
                       label: 'Isya',
                       isLoading: provider.isLoading,
                       isLoadingSholat: provider.isLoadingSholat,
-                      waktuSholat: jadwalSholatResult?.isha,
+                      waktuSholat: provider.isya,
                     ),
                   ],
                 );
