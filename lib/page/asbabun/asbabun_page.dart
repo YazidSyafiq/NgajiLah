@@ -7,6 +7,7 @@ import 'package:ngajilah/page/asbabun/asbabun_container.dart';
 import 'package:ngajilah/page/asbabun/asbabun_form.dart';
 import 'package:ngajilah/page/asbabun/asbabun_provider.dart';
 import 'package:ngajilah/widget/appbar_widget.dart';
+import 'package:ngajilah/widget/error_widget.dart';
 import 'package:provider/provider.dart';
 
 class AsbabunPage extends StatefulWidget {
@@ -73,72 +74,11 @@ class _AsbabunPageState extends State<AsbabunPage> {
                     ),
                   );
                 } else if (provider.errorGemini != null) {
-                  return Center(
-                    child: Container(
-                      width: double.infinity,
-                      margin: const EdgeInsets.symmetric(horizontal: 24),
-                      child: Column(
-                        children: [
-                          Text(
-                            provider.errorGemini!,
-                            style: TextStyleCollection.poppinsNormal.copyWith(
-                              fontSize: 14,
-                              color: ColorCollection.darkGreen1,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                          Container(
-                            width: 125,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                stops: const [0, 0.6, 0.8, 0.9],
-                                colors: [
-                                  ColorCollection.vividOrange,
-                                  ColorCollection.princetonOrange,
-                                  ColorCollection.royalOrange,
-                                  ColorCollection.rajah,
-                                ],
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: ColorCollection.darkGreen1,
-                                  offset: const Offset(0, 2.5),
-                                  blurRadius: 3,
-                                  blurStyle: BlurStyle.normal,
-                                ),
-                              ],
-                              image: DecorationImage(
-                                image: AssetImage(Assets.pattern1),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                provider.getAsbabun(
-                                    surah: provider.controller.text);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: ColorCollection.transparent,
-                                shadowColor: ColorCollection.transparent,
-                              ),
-                              child: Text(
-                                'Refresh',
-                                style: TextStyleCollection.poppinsBold.copyWith(
-                                  color: ColorCollection.white,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  return ErrorGlobalWidget(
+                    errorText: provider.errorGemini!,
+                    onRefresh: () {
+                      provider.getAsbabun(surah: provider.controller.text);
+                    },
                   );
                 } else {
                   return Expanded(

@@ -27,6 +27,7 @@ class Assets {
   static String tasbihImageContainer = 'assets/images/tasbih_image.png';
   static String asbabunLetter = 'assets/images/asbabun_letter.png';
   static String asbabunImage = 'assets/images/asbabun_image.png';
+  static String errorImage = 'assets/images/error_image.png';
 }
 
 class IconMenu {

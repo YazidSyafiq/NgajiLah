@@ -4,6 +4,7 @@ import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/doa/doa_detail_page.dart';
 import 'package:ngajilah/page/doa/doa_provider.dart';
+import 'package:ngajilah/widget/error_widget.dart';
 import 'package:provider/provider.dart';
 
 class ListDoa extends StatefulWidget {
@@ -49,68 +50,22 @@ class _ListDoaState extends State<ListDoa> {
             ),
           );
         } else if (provider.errorListDoa != null) {
-          return Center(
+          return Expanded(
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  Text(
-                    provider.errorListDoa!,
-                    style: TextStyleCollection.poppinsNormal.copyWith(
-                      color: ColorCollection.darkGreen1,
-                      fontSize: 14,
-                    ),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.backgroundSplash,
                   ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    width: 125,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        stops: const [0, 0.6, 0.8, 0.9],
-                        colors: [
-                          ColorCollection.vividOrange,
-                          ColorCollection.princetonOrange,
-                          ColorCollection.royalOrange,
-                          ColorCollection.rajah,
-                        ],
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorCollection.darkGreen1,
-                          offset: const Offset(0, 2.5),
-                          blurRadius: 3,
-                          blurStyle: BlurStyle.normal,
-                        ),
-                      ],
-                      image: DecorationImage(
-                        image: AssetImage(Assets.pattern1),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        provider.getListDoa();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: ColorCollection.transparent,
-                        shadowColor: ColorCollection.transparent,
-                      ),
-                      child: Text(
-                        'Refresh',
-                        style: TextStyleCollection.poppinsBold.copyWith(
-                          color: ColorCollection.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: ErrorGlobalWidget(
+                errorText: provider.errorListDoa!,
+                onRefresh: () {
+                  provider.getListDoa();
+                },
               ),
             ),
           );

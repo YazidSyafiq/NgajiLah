@@ -23,7 +23,8 @@ class DoaProvider extends ChangeNotifier {
       _listDoaResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorListDoa = e.toString();
+      _errorListDoa =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingListDoa = false;
@@ -50,7 +51,8 @@ class DoaProvider extends ChangeNotifier {
       _detailDoaResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorDetailDoa = e.toString();
+      _errorDetailDoa =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingDetailDoa = false;

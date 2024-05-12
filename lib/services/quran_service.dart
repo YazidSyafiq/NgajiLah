@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:ngajilah/model/detail_juz_ayat_response.dart';
 import 'package:ngajilah/model/detail_surah_ayat_response.dart';
@@ -53,7 +55,14 @@ class QuranService {
     try {
       final response = await dio.get('${BaseUrl.detailJuz}/$nomorJuz');
       if (response.statusCode == 200) {
-        return DetailJuzResponse.fromJson(response.data);
+        if (response.data is String) {
+          Map<String, dynamic> jsonResponse = json.decode(response.data);
+          return DetailJuzResponse.fromJson(jsonResponse);
+        } else if (response.data is Map<String, dynamic>) {
+          return DetailJuzResponse.fromJson(response.data);
+        } else {
+          throw Exception('Unknown response type');
+        }
       } else {
         throw Exception('Gagal get surah');
       }

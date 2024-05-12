@@ -36,7 +36,8 @@ class AsbabunProvider extends ChangeNotifier {
       editResult();
       notifyListeners();
     } catch (e) {
-      _erroGemini = e.toString();
+      _erroGemini =
+          'Pastikan koneksimu aman dan lancar yaa dan coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGemini = false;
@@ -170,6 +171,7 @@ class AsbabunProvider extends ChangeNotifier {
   void deleteSurah() {
     _controller.clear();
     _result = null;
+    _erroGemini = null;
     notifyListeners();
   }
 

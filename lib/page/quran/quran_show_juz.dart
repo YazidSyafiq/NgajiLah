@@ -4,6 +4,7 @@ import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/quran_detail/quran_detail_juz.dart';
 import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/widget/error_widget.dart';
 import 'package:provider/provider.dart';
 
 class ShowJuz extends StatefulWidget {
@@ -41,67 +42,11 @@ class _ShowSurahState extends State<ShowJuz> {
             ),
           );
         } else if (provider.errorGetJuz != null) {
-          return Center(
-            child: Column(
-              children: [
-                Text(
-                  'Error : ${provider.errorGetJuz}',
-                  style: TextStyleCollection.poppinsNormal.copyWith(
-                    fontSize: 14,
-                    color: ColorCollection.darkGreen1,
-                  ),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Container(
-                  width: 125,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      stops: const [0, 0.6, 0.8, 0.9],
-                      colors: [
-                        ColorCollection.vividOrange,
-                        ColorCollection.princetonOrange,
-                        ColorCollection.royalOrange,
-                        ColorCollection.rajah,
-                      ],
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: ColorCollection.darkGreen1,
-                        offset: const Offset(0, 2.5),
-                        blurRadius: 3,
-                        blurStyle: BlurStyle.normal,
-                      ),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage(Assets.pattern1),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      provider.getJuz();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorCollection.transparent,
-                      shadowColor: ColorCollection.transparent,
-                    ),
-                    child: Text(
-                      'Refresh',
-                      style: TextStyleCollection.poppinsBold.copyWith(
-                        color: ColorCollection.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          return ErrorGlobalWidget(
+            errorText: provider.errorGetJuz!,
+            onRefresh: () {
+              provider.getJuz();
+            },
           );
         } else {
           return ListView.builder(

@@ -25,7 +25,8 @@ class QuranProvider extends ChangeNotifier {
       _surahQuranResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorGetSurah = e.toString();
+      _errorGetSurah =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGetSurah = false;
@@ -52,7 +53,8 @@ class QuranProvider extends ChangeNotifier {
       _juzQuranResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorGetJuz = e.toString();
+      _errorGetJuz =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGetJuz = false;
@@ -81,7 +83,8 @@ class QuranProvider extends ChangeNotifier {
       _detailSurahResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorGetAyatBySurah = e.toString();
+      _errorGetAyatBySurah =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGetAyatBySurah = false;
@@ -110,7 +113,8 @@ class QuranProvider extends ChangeNotifier {
       _detailJuzResponse = response;
       notifyListeners();
     } catch (e) {
-      _errorGetAyatByJuz = e.toString();
+      _errorGetAyatByJuz =
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGetAyatByJuz = false;
