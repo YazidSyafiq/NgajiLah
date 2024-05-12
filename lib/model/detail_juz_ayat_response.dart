@@ -42,7 +42,7 @@ class DetailJuzResponse {
 class Data {
   int? juz;
   int? juzStartSurahNumber;
-  int? juzEndSurahNumber;
+  dynamic juzEndSurahNumber;
   String? juzStartInfo;
   String? juzEndInfo;
   int? totalVerses;
