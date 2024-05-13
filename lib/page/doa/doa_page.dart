@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_bar.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:ngajilah/page/doa/doa_header.dart';
 import 'package:ngajilah/page/doa/doa_list.dart';
-import 'package:ngajilah/page/doa/doa_provider.dart';
+import 'package:ngajilah/provider/doa_provider.dart';
 import 'package:provider/provider.dart';
 
 class KumpulanDoaPage extends StatefulWidget {

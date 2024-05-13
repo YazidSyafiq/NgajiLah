@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/quran_detail/quran_detail_list_ayat_by_juz.dart';
-import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/provider/quran_provider.dart';
 import 'package:ngajilah/widget/appbar_widget.dart';
 import 'package:ngajilah/widget/error_widget.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class DetailJuzPage extends StatefulWidget {
@@ -50,12 +51,9 @@ class _DetailJuzPageState extends State<DetailJuzPage> {
           title: Consumer<QuranProvider>(
             builder: (context, provider, child) {
               if (provider.isLoadingGetAyatByJuz) {
-                return SizedBox(
-                  width: 15,
-                  height: 15,
-                  child: CircularProgressIndicator(
-                    color: ColorCollection.white,
-                  ),
+                return LoadingWidget(
+                  color: ColorCollection.white,
+                  size: 15,
                 );
               } else {
                 return Text(
@@ -76,12 +74,9 @@ class _DetailJuzPageState extends State<DetailJuzPage> {
         builder: (context, provider, child) {
           if (provider.isLoadingGetAyatByJuz) {
             return Center(
-              child: SizedBox(
-                width: 30,
-                height: 30,
-                child: CircularProgressIndicator(
-                  color: ColorCollection.darkGreen1,
-                ),
+              child: LoadingWidget(
+                color: ColorCollection.darkGreen1,
+                size: 30,
               ),
             );
           } else if (provider.errorGetAyatByJuz != null) {

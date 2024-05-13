@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/doa/doa_provider.dart';
+import 'package:ngajilah/provider/doa_provider.dart';
 import 'package:ngajilah/widget/appbar_widget.dart';
 import 'package:ngajilah/widget/error_widget.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class DoaDetailPage extends StatefulWidget {
@@ -49,12 +50,9 @@ class _DoaDetailPageState extends State<DoaDetailPage> {
         builder: (context, provider, child) {
           if (provider.isLoadingDetailDoa) {
             return Center(
-              child: SizedBox(
-                width: 30,
-                height: 30,
-                child: CircularProgressIndicator(
-                  color: ColorCollection.vividOrange,
-                ),
+              child: LoadingWidget(
+                color: ColorCollection.vividOrange,
+                size: 30,
               ),
             );
           } else if (provider.errorDetailDoa != null) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/color_constant.dart';
-import 'package:ngajilah/page/tasbih/tasbih_provider.dart';
+import 'package:ngajilah/provider/tasbih_provider.dart';
 import 'package:provider/provider.dart';
 
 class ButtonTasbih extends StatelessWidget {

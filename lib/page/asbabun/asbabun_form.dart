@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/asbabun/asbabun_provider.dart';
+import 'package:ngajilah/provider/asbabun_provider.dart';
 import 'package:provider/provider.dart';
 
 class AsbabunForm extends StatefulWidget {

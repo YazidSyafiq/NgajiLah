@@ -3,7 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/provider/quran_provider.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class DetailSurahQuranContainer extends StatelessWidget {
@@ -56,14 +57,9 @@ class DetailSurahQuranContainer extends StatelessWidget {
             child: Consumer<QuranProvider>(
               builder: (context, provider, child) {
                 if (provider.isLoadingGetAyatBySurah) {
-                  return Center(
-                    child: SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(
-                        color: ColorCollection.white,
-                      ),
-                    ),
+                  return LoadingWidget(
+                    color: ColorCollection.white,
+                    size: 20,
                   );
                 } else {
                   return Column(

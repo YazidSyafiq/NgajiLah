@@ -3,8 +3,9 @@ import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/quran_detail/quran_detail_surah.dart';
-import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/provider/quran_provider.dart';
 import 'package:ngajilah/widget/error_widget.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class ShowSurah extends StatefulWidget {
@@ -33,12 +34,9 @@ class _ShowSurahState extends State<ShowSurah> {
       builder: (context, provider, child) {
         if (provider.isLoadingGetSurah) {
           return Center(
-            child: SizedBox(
-              width: 30,
-              height: 30,
-              child: CircularProgressIndicator(
-                color: ColorCollection.darkGreen,
-              ),
+            child: LoadingWidget(
+              color: ColorCollection.darkGreen1,
+              size: 30,
             ),
           );
         } else if (provider.errorGetSurah != null) {

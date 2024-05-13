@@ -4,10 +4,10 @@ import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_bar.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:ngajilah/page/tasbih/tasbih_button.dart';
 import 'package:ngajilah/page/tasbih/tasbih_container.dart';
-import 'package:ngajilah/page/tasbih/tasbih_provider.dart';
+import 'package:ngajilah/provider/tasbih_provider.dart';
 import 'package:ngajilah/page/tasbih/tasbih_refresh.dart';
 import 'package:provider/provider.dart';
 

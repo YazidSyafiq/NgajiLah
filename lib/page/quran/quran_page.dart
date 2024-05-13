@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_bar.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:ngajilah/page/quran/quran_container.dart';
 import 'package:ngajilah/page/quran/quran_header.dart';
 import 'package:ngajilah/page/quran/quran_tab_bar.dart';

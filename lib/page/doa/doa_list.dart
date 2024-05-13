@@ -3,8 +3,9 @@ import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/doa/doa_detail_page.dart';
-import 'package:ngajilah/page/doa/doa_provider.dart';
+import 'package:ngajilah/provider/doa_provider.dart';
 import 'package:ngajilah/widget/error_widget.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class ListDoa extends StatefulWidget {
@@ -38,12 +39,9 @@ class _ListDoaState extends State<ListDoa> {
                   const SizedBox(
                     height: 24,
                   ),
-                  SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: CircularProgressIndicator(
-                      color: ColorCollection.vividOrange,
-                    ),
+                  LoadingWidget(
+                    color: ColorCollection.vividOrange,
+                    size: 30,
                   ),
                 ],
               ),

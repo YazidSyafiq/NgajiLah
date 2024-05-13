@@ -3,7 +3,8 @@ import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/home/home_jadwal_sholat_container.dart';
-import 'package:ngajilah/page/home/home_jadwal_sholat_provider.dart';
+import 'package:ngajilah/provider/home_jadwal_sholat_provider.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class HomeJadwalSholat extends StatefulWidget {
@@ -89,12 +90,9 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
                       ),
                       Flexible(
                         child: provider.isLoading
-                            ? SizedBox(
-                                width: 15,
-                                height: 15,
-                                child: CircularProgressIndicator(
-                                  color: ColorCollection.mellowApricot,
-                                ),
+                            ? LoadingWidget(
+                                color: ColorCollection.mellowApricot,
+                                size: 15,
                               )
                             : Text(
                                 provider.savedAddress ?? 'Cari Lokasi',
@@ -125,12 +123,9 @@ class _HomeJadwalSholatState extends State<HomeJadwalSholat> {
           Consumer<JadwalSholatProvider>(
             builder: (context, provider, child) {
               if (provider.isLoadingToday || provider.isLoading) {
-                return SizedBox(
-                  width: 15,
-                  height: 15,
-                  child: CircularProgressIndicator(
-                    color: ColorCollection.mellowApricot,
-                  ),
+                return LoadingWidget(
+                  color: ColorCollection.mellowApricot,
+                  size: 15,
                 );
               } else if (provider.errorToday != null) {
                 return IconButton(

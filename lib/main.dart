@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ngajilah/constant/gemini_ai.dart';
-import 'package:ngajilah/page/asbabun/asbabun_provider.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
-import 'package:ngajilah/page/doa/doa_provider.dart';
-import 'package:ngajilah/page/home/home_jadwal_sholat_provider.dart';
-import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/provider/asbabun_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/doa_provider.dart';
+import 'package:ngajilah/provider/home_jadwal_sholat_provider.dart';
+import 'package:ngajilah/provider/quran_provider.dart';
 import 'package:ngajilah/page/splash_page.dart';
-import 'package:ngajilah/page/tasbih/tasbih_provider.dart';
+import 'package:ngajilah/provider/tasbih_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {

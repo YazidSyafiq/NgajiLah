@@ -5,9 +5,10 @@ import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
 import 'package:ngajilah/page/asbabun/asbabun_container.dart';
 import 'package:ngajilah/page/asbabun/asbabun_form.dart';
-import 'package:ngajilah/page/asbabun/asbabun_provider.dart';
+import 'package:ngajilah/provider/asbabun_provider.dart';
 import 'package:ngajilah/widget/appbar_widget.dart';
 import 'package:ngajilah/widget/error_widget.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 import 'package:provider/provider.dart';
 
 class AsbabunPage extends StatefulWidget {
@@ -32,7 +33,7 @@ class _AsbabunPageState extends State<AsbabunPage> {
         child: AppbarWidget(
           title: Image.asset(
             Assets.asbabunLetter,
-            height: 50,
+            height: 40,
           ),
         ),
       ),
@@ -64,12 +65,9 @@ class _AsbabunPageState extends State<AsbabunPage> {
                 if (provider.isLoadingGemini) {
                   return Expanded(
                     child: Center(
-                      child: SizedBox(
-                        width: 30,
-                        height: 30,
-                        child: CircularProgressIndicator(
-                          color: ColorCollection.darkGreen1,
-                        ),
+                      child: LoadingWidget(
+                        color: ColorCollection.darkGreen1,
+                        size: 30,
                       ),
                     ),
                   );

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:ngajilah/page/home/home_header.dart';
 import 'package:ngajilah/page/home/home_jadwal_sholat.dart';
 import 'package:ngajilah/page/home/home_menu.dart';

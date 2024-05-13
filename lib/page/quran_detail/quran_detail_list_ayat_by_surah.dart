@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/quran/quran_provider.dart';
+import 'package:ngajilah/provider/quran_provider.dart';
 import 'package:provider/provider.dart';
 
 class ListAyatBySurah extends StatelessWidget {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
+import 'package:ngajilah/widget/loading_widget.dart';
 
 class ContainerWaktuSholat extends StatelessWidget {
   const ContainerWaktuSholat({
@@ -34,12 +35,9 @@ class ContainerWaktuSholat extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           isLoadingSholat || isLoading
-              ? SizedBox(
-                  width: 15,
-                  height: 15,
-                  child: CircularProgressIndicator(
-                    color: ColorCollection.mellowApricot,
-                  ),
+              ? LoadingWidget(
+                  color: ColorCollection.mellowApricot,
+                  size: 15,
                 )
               : waktuSholat == null
                   ? Icon(

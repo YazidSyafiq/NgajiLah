@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ngajilah/constant/assets_constant.dart';
 import 'package:ngajilah/constant/color_constant.dart';
 import 'package:ngajilah/constant/text_style_constant.dart';
-import 'package:ngajilah/page/bottom_navigation_bar/bottom_navigation_provider.dart';
+import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBar extends StatefulWidget {
