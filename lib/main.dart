@@ -7,7 +7,7 @@ import 'package:ngajilah/provider/bottom_navigation_provider.dart';
 import 'package:ngajilah/provider/doa_provider.dart';
 import 'package:ngajilah/provider/home_jadwal_sholat_provider.dart';
 import 'package:ngajilah/provider/quran_provider.dart';
-import 'package:ngajilah/page/splash_page.dart';
+import 'package:ngajilah/page/splash/splash_page.dart';
 import 'package:ngajilah/provider/tasbih_provider.dart';
 import 'package:provider/provider.dart';
 
