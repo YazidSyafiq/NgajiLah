@@ -37,7 +37,7 @@ class AsbabunProvider extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       _erroGemini =
-          'Pastikan koneksimu aman dan lancar yaa dan coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
+          'Pastikan koneksimu aman dan lancar yaa. Coba refresh terlebih dahulu. Jika belum berhasil, coba lagi nanti yaa.';
       notifyListeners();
     } finally {
       _isLoadingGemini = false;
