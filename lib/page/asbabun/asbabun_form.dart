@@ -14,17 +14,6 @@ class AsbabunForm extends StatefulWidget {
 
 class _AsbabunFormState extends State<AsbabunForm> {
   @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) {
-        if (mounted) {}
-      },
-    );
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Consumer<AsbabunProvider>(
       builder: (context, provider, child) {

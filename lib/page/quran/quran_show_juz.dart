@@ -136,7 +136,7 @@ class _ShowSurahState extends State<ShowJuz> {
                               'Mulai dari ${data?.nameStartId} Ayat ${data?.verseStart}',
                               style: TextStyle(
                                 color: ColorCollection.white,
-                                fontSize: 18,
+                                fontSize: 15,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
